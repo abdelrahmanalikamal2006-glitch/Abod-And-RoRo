@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="love.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحتنا السرية ❤️</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+    <div id="login-container">
+        <h1>🔐</h1>
+        <h1 style="font-family: lobster;">صُنع خصيصاً <br>بكل حب من أجل حبيبتي 💖.</h1>
+        <p>الباسورد عيد ميلاد ام زين:🤰</p>
+        <input type="password" id="passwordInput" placeholder="اكتبي عيد ميلادك ي حب">
+        <br>
+        <button id="bot" onclick="checkPassword()"> برجلك اليمين 💏</button>
+        <p id="message"></p>
+    </div>
+
+    <div id="secret-content">
+        <h1>🔐</h1>
+        <h1>💖 أنا أسف ي يروري  💖</h1>
+        <p>
+            عايز اقولك حاجة يروري، أنا بحبك ي ست البنات ❤️<br>
+            ومقدرش أشوفك زعلانة… ي أغلى حاجة ف حياتي <br>
+            وكل لحظة حلوة ف حياتي لأنك موجودة فيها 💕<br>
+            انتي سبب فرحتي وكل لحظة بحبك أكتر<br>
+            حياتي ابتدت من يوم م نورتي حياتي <br>
+            بضحكتك و بعيونك ي قمر🌚.
+        </p>
+
+        <h2>✨ انا اسف ✨</h2>
+        <h3>داحنا عشرة سنين :</h3>
+        <p>2022❤️.</p>
+        <p>2023❤️.</p>
+        <p>2024❤️.</p>
+        <p>2025❤️.</p>
+        <p>2026⏳.</p>
+        <h3>ذكرياتنا الجميلة:</h3>
+        <div class="image-gallery">
+        <div id="1">
+            <img src="love1.jpg" alt="أول مره اتقابلنا 1" class="love1">
+            <h4>:❤️اول مره اتقابلنا</h4>
+        </div>    
+        <div id="2">
+            <img src="love2.jpg" alt="شبر ونص  2" class="love2">
+            <h4>الشبر ونص بتاعتي 😂</h4>
+        </div> 
+        <div id="3">
+            <h4> اغنيتنا ال بنحبها  </h4>
+            <img src="زينة.jpg" alt="اغنيتنا ال بنحبها" class="الاغنية">
+        </div> 
+        <div id="4">
+            <h4> اول ورده جبتهالك </h4>
+            <img src="الوردة.jpg" alt="">
+        </div>
+        <div id="5">
+            <h4> اسكرين مهم  </h4>
+            <img src="اسكرين.png" alt="">
+        </div> 
+    </div>
+    </div>
+    
+
+    <script>
+        /* ===== كلمة المرور ===== */
+        const CORRECT_PASSWORD = "322007"; 
+
+        function checkPassword() {
+            const input = document.getElementById("passwordInput").value;
+            const msg = document.getElementById("message");
+            const login = document.getElementById("login-container");
+            const secret = document.getElementById("secret-content");
+
+            if (input === CORRECT_PASSWORD) {
+                msg.textContent = "تم الدخول ❤️";
+                msg.style.color = "green";
+
+                login.style.display = "none";
+                secret.style.display = "block";
+            } else {
+                msg.textContent = "كلمة المرور غلط ❌";
+                msg.style.color = "red";
+                document.getElementById("passwordInput").value = "";
+            }
+        }
+
+        /* ===== إنشاء القلوب ===== */
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+
+            heart.style.left = Math.random() * window.innerWidth + "px";
+            heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+
+            const size = 10 + Math.random() * 20;
+            heart.style.width = size + "px";
+            heart.style.height = size + "px";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 6000);
+        }
+
+        setInterval(createHeart, 250);
+    </script>
+
+</body>
+</html>
